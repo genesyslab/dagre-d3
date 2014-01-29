@@ -20,10 +20,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-module.exports =  {
-  Digraph: require('graphlib').Digraph,
-  Renderer: require('./lib/Renderer'),
-  json: require('graphlib').converter.json,
-  layout: require('dagre').layout,
-  version: require('./lib/version')
-};
+define(['graphlib', 'bower_components/dagre-d3/lib/Renderer', 'dagre', 'bower_components/dagre-d3/lib/version'], function(graphlib, Renderer, dagre, version) {
+    return {
+          Digraph: graphlib.Digraph,
+          Renderer: Renderer.Renderer,
+          json: graphlib.converter.json,
+          layout: dagre.layout,
+          version: version
+    };
+});
